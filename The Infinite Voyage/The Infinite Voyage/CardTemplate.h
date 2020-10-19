@@ -23,14 +23,23 @@ public:
 class MonsterCard : public Card {
 public:
 	int health;
+	bool attackOne, attackTwo;
 	char aChoice[];
 };
 
 class BossCard : public Card {
+public:
 	int CR;
 };
 
 class RoomCard : public Card {
+public:
 	int pHealthScale, bHealthScale, dmgPerR, drawPerR, pStrBuff, mStrBuff, bHPR;
 	bool actFirst;
+	void RoomEffect() {
+
+	}
+	void BossEffect() {
+
+	}
 };
