@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Card Template.cpp" />
+    <ClCompile Include="MonsterAction.cpp" />
     <ClCompile Include="PlayerCardLibrary.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="The Infinite Voyage.cpp" />
@@ -147,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="CardTemplate.h" />
     <ClInclude Include="MasterCardLibrary.h" />
+    <ClInclude Include="MonsterAction.h" />
     <ClInclude Include="PlayerCardLibrary.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
