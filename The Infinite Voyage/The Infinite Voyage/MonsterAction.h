@@ -1,6 +1,5 @@
 #pragma once
 
-
 int activeMonsterHealth;
 int activeMonsterStrength;
 int activeMonsterDefense;
