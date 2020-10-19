@@ -3,3 +3,9 @@
 #endif
 #include "CardTemplate.h"
 #include "MasterCardLibrary.h"
+
+
+MonsterCard* larva = new MonsterCard;
+
+
+
