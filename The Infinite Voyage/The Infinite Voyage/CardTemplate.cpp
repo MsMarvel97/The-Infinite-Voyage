@@ -3,7 +3,6 @@
 using namespace std;
 
 class Card {
-
 public:
 	int attack, defense, armor, strength, heal;
 };
@@ -15,17 +14,30 @@ public:
 };
 
 class MonsterCard : public Card {
+public:
 	int health;
 	char aChoice[];
+	void AttackOne() {
+
+	}
+	void AttackTwo() {
+
+	}
 };
 
 class BossCard : public Card {
+public:
 	int CR;
-	
-
 };
 
 class RoomCard : public Card {
+public:
 	int pHealthScale, bHealthScale, dmgPerR, drawPerR, pStrBuff, mStrBuff, bHPR;
 	bool actFirst;
+	void RoomEffect() {
+
+	}
+	void BossEffect() {
+
+	}
 };
