@@ -21,6 +21,7 @@ public:
 };
 
 class MonsterCard : public Card {
+public:
 	int health;
 	char aChoice[];
 };
