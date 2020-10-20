@@ -25,10 +25,15 @@ public:
 
 void CreateMonster(MonsterCard card)
 {
-	ActiveMonster Monster;
+	ActiveMonster monster;
 
-	Monster.activeDam = card.damage;
-	Monster.activeHealth = card.health;
+	monster.activeDam = card.damage;
+	monster.activeHealth = card.health;
+	monster.activeDefense = card.defense;
+	monster.activeArmor = card.armor;
+	monster.activeHeal = card.heal;
+	
+
 }
 
 void MonsterAction()
