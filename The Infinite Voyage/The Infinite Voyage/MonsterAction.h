@@ -1,7 +1,10 @@
 #pragma once
 
-int activeMonsterHealth;
-int activeMonsterStrength;
-int activeMonsterDefense;
-int activeMonsterArmor;
-int activeMonsterHeal;
+class ActiveMonster
+{
+public:
+	string activeTitle, activeText;
+	int activeDam, activeHealth, activeDefense, activeArmor, activeHeal;
+};
+
+ActiveMonster InitMonster(MonsterCard card);

@@ -14,26 +14,19 @@ Pick move
 Apply move effects to Player
 */
 
-class ActiveMonster 
-{
-public:
-	int activeDam, activeHealth, activeDefense, activeArmor, activeHeal;
-
-
-};
-
-
-void CreateMonster(MonsterCard card)
+ActiveMonster InitMonster(MonsterCard card)
 {
 	ActiveMonster monster;
 
+	monster.activeTitle = card.title;
+	monster.activeText = card.text;
 	monster.activeDam = card.damage;
 	monster.activeHealth = card.health;
 	monster.activeDefense = card.defense;
 	monster.activeArmor = card.armor;
 	monster.activeHeal = card.heal;
 	
-
+	return monster;
 }
 
 void MonsterAction()
