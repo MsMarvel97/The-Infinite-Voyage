@@ -1,7 +1,6 @@
 #include <iostream>
 #include "MonsterAction.h"
-#include "MasterCardLibrary.h"
-#include "CardTemplate.h"
+
 
 /*
 Things that need to happen:
@@ -18,13 +17,13 @@ ActiveMonster InitMonster(MonsterCard card)
 {
 	ActiveMonster monster;
 
-	monster.activeTitle = card.title;
-	monster.activeText = card.text;
-	monster.activeDam = card.damage;
-	monster.activeHealth = card.health;
-	monster.activeDefense = card.defense;
-	monster.activeArmor = card.armor;
-	monster.activeHeal = card.heal;
+	monster.activeTitle = card.get_title();
+	monster.activeText = card.get_text();
+	monster.activeDam = card.get_damage();
+	monster.activeHealth = card.get_health();
+	monster.activeDefense = card.get_defense();
+	monster.activeArmor = card.get_armor();
+	monster.activeHeal = card.get_heal();
 	
 	return monster;
 }
@@ -32,10 +31,7 @@ ActiveMonster InitMonster(MonsterCard card)
 void MonsterAction()
 {
 	//temp value for player move
-	int incomingDam = attack->damage;
-
+	int incomingDam = PlayerCardLibrary::attack->get_damage();
 	//temp values for monster stats
 	int tempDam(2), tempHealth(20), tempDefense(2), tempArmor(2), tempHeal(1);
-
-
 }

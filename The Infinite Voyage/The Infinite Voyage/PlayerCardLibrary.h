@@ -3,7 +3,12 @@
 #endif
 #include "CardTemplate.h"
 
-PlayerCard* attack = new PlayerCard;
-PlayerCard* defend = new PlayerCard;
-PlayerCard* draw = new PlayerCard;
+class PlayerCardLibrary {
+public:
+	static PlayerCard* attack;
+	static PlayerCard* defend;
+	static PlayerCard* draw;
+
+	PlayerCardLibrary();
+};
 

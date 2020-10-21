@@ -24,9 +24,6 @@
     <ClCompile Include="PlayerCardLibrary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CardTemplate.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MonsterCardLibrary.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
