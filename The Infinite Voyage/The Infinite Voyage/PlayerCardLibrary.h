@@ -5,9 +5,9 @@
 
 class PlayerCardLibrary {
 public:
-	static PlayerCard* attack;
-	static PlayerCard* defend;
-	static PlayerCard* draw;
+	PlayerCard* attack;
+	PlayerCard* defend;
+	PlayerCard* draw;
 
 	PlayerCardLibrary();
 };

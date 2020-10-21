@@ -36,6 +36,7 @@ public:
 
 };
 
+
 class PlayerCard : public Card {
 public:
 	int cost = 0, draw = 0, maxHP = 0, energy = 0;
