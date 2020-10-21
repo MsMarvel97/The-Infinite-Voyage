@@ -24,7 +24,7 @@ class MonsterCard : public Card {
 public:
 	int health;
 	bool attackOne, attackTwo;
-	char aChoice[];
+	char aChoice[]; 
 };
 
 class BossCard : public Card {

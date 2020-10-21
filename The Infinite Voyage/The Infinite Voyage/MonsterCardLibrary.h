@@ -5,7 +5,12 @@
 #include "MasterCardLibrary.h"
 
 
-MonsterCard* larva = new MonsterCard;
+MonsterCard* Larva = new MonsterCard;
+MonsterCard* Sentry = new MonsterCard;
+MonsterCard* Engineer = new MonsterCard;
+MonsterCard* Researcher = new MonsterCard;
+MonsterCard* Trapper = new MonsterCard;
+MonsterCard* Hound = new MonsterCard;
 
 
 
