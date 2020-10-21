@@ -142,7 +142,6 @@
     <ClCompile Include="BossCardLibrary.cpp" />
     <ClCompile Include="CardTemplate.cpp" />
     <ClCompile Include="MonsterCardLibrary.cpp" />
-    <ClCompile Include="Card Template.cpp" />
     <ClCompile Include="MonsterAction.cpp" />
     <ClCompile Include="PlayerCardLibrary.cpp" />
     <ClCompile Include="Player.cpp" />
