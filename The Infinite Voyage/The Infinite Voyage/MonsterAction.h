@@ -1,8 +1,15 @@
-#pragma once
+#ifndef __MonsterAction_H__
+#define __MonsterAction_H__
+#endif
+#include "PlayerCardLibrary.h"
 
+class ActiveMonster
+{
+public:
+	string activeTitle, activeText;
+	int activeDam, activeHealth, activeDefense, activeArmor, activeHeal;
+};
 
-int activeMonsterHealth;
-int activeMonsterStrength;
-int activeMonsterDefense;
-int activeMonsterArmor;
-int activeMonsterHeal;
+void MonsterAction();
+
+ActiveMonster InitMonster(MonsterCard card);
