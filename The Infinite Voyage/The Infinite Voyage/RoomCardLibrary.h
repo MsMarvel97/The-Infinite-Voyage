@@ -3,3 +3,5 @@
 #endif
 #include "CardTemplate.h"
 #include "MasterCardLibrary.h"
+
+RoomCard* MedicalBay = new RoomCard;
