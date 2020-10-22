@@ -12,24 +12,24 @@ public:
 	int damage = 0, defense = 0, armor = 0, strength = 0, heal = 0;
 	string text = "";
 	string title = "";
-	
+
 	int get_damage() { return damage; }
 	void set_damage(int damage) { damage = damage; }
-	
+
 	int get_defense() { return defense; }
 	void set_defense(int defense) { defense = defense; }
 
 	int get_armor() { return armor; }
 	void set_armor(int armor) { armor = armor; }
-	
+
 	int get_strength() { return strength; }
 	void set_strength(int strength) { strength = strength; }
-	
+
 	int get_heal() { return heal; }
 	void set_heal(int heal) { heal = heal; }
 
 	string get_text() { return text; }
-	void set_text (string text) { text = text; }
+	void set_text(string text) { text = text; }
 
 	string get_title() { return title; }
 	void set_title(string title) { title = title; }
@@ -59,7 +59,7 @@ public:
 	void set_exhaust(int exhaust) { exhaust = exhaust; }
 
 	string get_type() { return type; }
-	void set_type (string type) { type = type; }
+	void set_type(string type) { type = type; }
 
 
 
@@ -77,7 +77,7 @@ public:
 	int health = 0;
 	bool attackOne = false, attackTwo = false;
 	char aChoice[1];
-	
+
 	int get_health() { return health; }
 	void set_title(int health) { health = health; }
 };

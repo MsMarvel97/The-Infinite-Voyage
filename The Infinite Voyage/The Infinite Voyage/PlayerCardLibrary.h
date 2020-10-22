@@ -9,6 +9,15 @@ public:
 	PlayerCard* defend;
 	PlayerCard* draw;
 
+	PlayerCard* HeatSink;
+	PlayerCard* Overload;
+	PlayerCard* PlasteelArmor;
+	PlayerCard* ShieldPack;
+	PlayerCard* Barrel;
+	PlayerCard* Scope;
+	PlayerCard* HighExplosiveCharge;
+	PlayerCard* BatteryPack;
+
 	PlayerCardLibrary();
 };
 
