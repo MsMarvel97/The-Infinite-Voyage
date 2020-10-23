@@ -90,5 +90,7 @@ public:
 class RoomCard : public Card {
 public:
 	int pHealthScale = 0, bHealthScale = 0, dmgPerR = 0, drawPerR = 0, pStrBuff = 0, mStrBuff = 0, bHPR = 0;
+	int drawPR = 0; //# of extra cards the player draws per round
 	bool actFirst = false;
+	bool restoreHP = false; //restores player to full hp if true
 };
