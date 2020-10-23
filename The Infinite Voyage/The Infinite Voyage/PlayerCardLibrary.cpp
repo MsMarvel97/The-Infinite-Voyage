@@ -35,24 +35,68 @@ PlayerCardLibrary::PlayerCardLibrary()
 
 
 	//Player Upgrade Cards
-	HeatSink->cost = 0;
-	HeatSink->energy = 2;
-	HeatSink->title = "Heat Sink";
-	HeatSink->text = "Gain +2 Energy this turn";
-	HeatSink->type = "Upgrade";
+	HeatSink = new PlayerCard();
+	HeatSink->set_cost(0);
+	HeatSink->set_energy(2);
+	HeatSink->set_title("Heat Sink");
+	HeatSink->set_text("Gain +2 energy this turn.");
+	HeatSink->set_type("Upgrade");
 
-	PlasteelArmor->cost = 2;
-	PlasteelArmor->armor = 1;
-	PlasteelArmor->exhaust = true;
-	PlasteelArmor->title = "Plasteel Armor";
-	PlasteelArmor->text = "Gain 1 Armor. Exhaust.";
-	PlasteelArmor->type = "Upgrade";
+	Overload = new PlayerCard();
+	Overload->set_cost(Overload->get_energy());
+	Overload->set_damage(Overload->get_energy() * 3);
+	Overload->set_title("Overload");
+	Overload->set_text("Spend all remaining energy and deal damage equal to 3 x (remaining energy)");
+	Overload->set_type("Upgrade");
 
-	ShieldPack->cost = 1;
-	ShieldPack->defense = 4;
-	ShieldPack->title = "Shield Pack";
-	ShieldPack->text = "Gain 4 defense.";
-	ShieldPack->type = "Upgrade";
+	PlasteelArmor = new PlayerCard();
+	PlasteelArmor->set_cost(2);
+	PlasteelArmor->set_armor(1);
+	PlasteelArmor->set_exhaust(true);
+	PlasteelArmor->set_title("Plasteel Armor");
+	PlasteelArmor->set_text("Gain 1 armor. Exhaust");
+	PlasteelArmor->set_type("Upgrade");
+
+	ShieldPack = new PlayerCard();
+	ShieldPack->set_cost(1);
+	ShieldPack->set_defense(4);
+	ShieldPack->set_title("Shield Pack");
+	ShieldPack->set_text("Gain 4 defense.");
+	ShieldPack->set_type("Upgrade");
+
+	Barrel = new PlayerCard();
+	Barrel->set_cost(1);
+	Barrel->set_damage(6);
+	Barrel->set_defense(-1);
+	Barrel->set_title("Barrel");
+	Barrel->set_text("Deal 6 damage and lose 1 defense.");
+	Barrel->set_type("Upgrade");
+
+	Scope = new PlayerCard();
+	Scope->set_cost(1);
+	Scope->set_damage(3);
+	Scope->set_draw(1);
+	Scope->set_title("Scope");
+	Scope->set_text("Deal 3 damage and draw 1 card");
+	Scope->set_type("Upgrade");
+
+	HighExplosiveCharge = new PlayerCard();
+	HighExplosiveCharge->set_cost(1);
+	HighExplosiveCharge->set_damage(6);
+	HighExplosiveCharge->set_exhaust(true);
+	HighExplosiveCharge->set_title("High-Explosive Charge");
+	HighExplosiveCharge->set_text("Deal 6 damage. Exhaust");
+	HighExplosiveCharge->set_type("Upgrade");
+
+	BatteryPack = new PlayerCard();
+	BatteryPack->set_cost(1);
+	BatteryPack->set_draw(3);
+	BatteryPack->set_title("Battery Pack");
+	BatteryPack->set_text("Draw 3 cards.");
+	BatteryPack->set_type("Upgrade");
+
+
+	//Player Elite Upgrade Cards\\
 
 	Barrel->cost = 1;
 	Barrel->damage = 6;
