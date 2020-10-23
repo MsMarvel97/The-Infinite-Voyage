@@ -5,61 +5,61 @@
 
 #include <iostream>
 #include <string>
-using namespace std;
+
 
 class Card {
 public:
-	int damage = 0, defense = 0, armor = 0, strength = 0, heal = 0;
-	string text = "";
-	string title = "";
+	int m_damage, m_defense, m_armor, m_strength, m_heal;
+	std::string m_text;
+	std::string m_title;
 
-	int get_damage() { return damage; }
-	void set_damage(int damage) { damage = damage; }
+	int get_damage() { return m_damage; }
+	void set_damage(int dmg) { m_damage = dmg; }
 
-	int get_defense() { return defense; }
-	void set_defense(int defense) { defense = defense; }
+	int get_defense() { return m_defense; }
+	void set_defense(int defense) { m_defense = defense; }
 
-	int get_armor() { return armor; }
-	void set_armor(int armor) { armor = armor; }
+	int get_armor() { return m_armor; }
+	void set_armor(int armor) { m_armor = armor; }
 
-	int get_strength() { return strength; }
-	void set_strength(int strength) { strength = strength; }
+	int get_strength() { return m_strength; }
+	void set_strength(int strength) { m_strength = strength; }
 
-	int get_heal() { return heal; }
-	void set_heal(int heal) { heal = heal; }
+	int get_heal() { return m_heal; }
+	void set_heal(int heal) { m_heal = heal; }
 
-	string get_text() { return text; }
-	void set_text(string text) { text = text; }
+	std::string get_text() { return m_text; }
+	void set_text(std::string text) { m_text = text; }
 
-	string get_title() { return title; }
-	void set_title(string title) { title = title; }
+	std::string get_title() { return m_title; }
+	void set_title(std::string title) { m_title = title; }
 
 };
 
 
 class PlayerCard : public Card {
 public:
-	int cost = 0, draw = 0, maxHP = 0, energy = 0;
-	bool exhaust = false;
-	string type = "";
+	int m_cost, m_draw, m_maxHP, m_energy;
+	bool m_exhaust;
+	std::string m_type;
 
-	int get_cost() { return cost; }
-	void set_cost(int cost) { cost = cost; }
+	int get_cost() { return m_cost; }
+	void set_cost(int cost) { m_cost = cost; }
 
-	int get_draw() { return draw; }
-	void set_draw(int draw) { draw = draw; }
+	int get_draw() { return m_draw; }
+	void set_draw(int draw) { m_draw = draw; }
 
-	int get_maxHP() { return maxHP; }
-	void set_maxHP(int maxHP) { maxHP = maxHP; }
+	int get_maxHP() { return m_maxHP; }
+	void set_maxHP(int maxHP) { m_maxHP = maxHP; }
 
-	int get_energy() { return energy; }
-	void set_energy(int energy) { energy = energy; }
+	int get_energy() { return m_energy; }
+	void set_energy(int energy) { m_energy = energy; }
 
-	bool get_exhaust() { return exhaust; }
-	void set_exhaust(int exhaust) { exhaust = exhaust; }
+	bool get_exhaust() { return m_exhaust; }
+	void set_exhaust(bool exhaust) { m_exhaust = exhaust; }
 
-	string get_type() { return type; }
-	void set_type(string type) { type = type; }
+	std::string get_type() { return m_type; }
+	void set_type(const std::string& type) { m_type = type; }
 
 
 
@@ -74,12 +74,22 @@ public:
 
 class MonsterCard : public Card {
 public:
-	int health = 0;
-	bool attackOne = false, attackTwo = false;
-	char aChoice[1];
+	int m_health, m_selfDmg;
+	bool m_attackOne = false,m_attackTwo = false;
+	char m_aChoice[1];
 
-	int get_health() { return health; }
-	void set_title(int health) { health = health; }
+	int get_m_selfDmg() { return m_selfDmg; }
+	void set_m_selfDmg(int sDmg) { m_selfDmg = sDmg; }
+
+	int get_m_health() { return m_health; }
+	void set_m_health(int health) { m_health = health; }
+
+	bool get_m_attackOne() { return m_attackOne; }
+	void set_m_attackOne(bool attackOne) { m_attackOne = attackOne; }
+
+	bool get_m_attackTwo() { return m_attackTwo; }
+	void set_m_attackTwo(bool attackTwo) { m_attackTwo = attackTwo; }
+
 };
 
 class BossCard : public Card {
@@ -89,8 +99,36 @@ public:
 
 class RoomCard : public Card {
 public:
-	int pHealthScale = 0, bHealthScale = 0, dmgPerR = 0, drawPerR = 0, pStrBuff = 0, mStrBuff = 0, bHPR = 0;
-	int drawPR = 0; //# of extra cards the player draws per round
-	bool actFirst = false;
-	bool restoreHP = false; //restores player to full hp if true
+	int m_pHealthScale, m_bHealthScale, m_dmgPerR, m_pStrBuff, m_monsterStrBuff, m_bHPR;
+	int m_drawPerR; //# of extra cards the player draws per round
+	bool m_actFirst;
+	bool m_restoreHP; //restores player to full hp if true
+
+	int get_m_pHealthScale() { return m_pHealthScale; }
+	void set_m_pHealthScale(int pHS) { m_pHealthScale = pHS; }
+
+	int get_m_bHealthScale() { return m_bHealthScale; }
+	void set_m_bHealthScale(int bHS) { m_bHealthScale = bHS; }
+
+	int get_m_dmgPerR() { return m_dmgPerR; }
+	void set_m_dmgPerR(int dPR) { m_dmgPerR = dPR; }
+
+	int get_m_drawPerR() { return m_drawPerR; }
+	void set_m_drawPerR(int drawPR) { m_drawPerR = drawPR; }
+
+	int get_m_pStrBuff() { return m_pStrBuff; }
+	void set_m_pStrBuff(int pSB) { m_pStrBuff = pSB; }
+
+	int get_m_monsterStrBuff() { return m_monsterStrBuff; }
+	void set_m_monsterStrBuff(int mSB) { m_monsterStrBuff = mSB; }
+
+	int get_m_bHPR() { return m_bHPR; }
+	void set_m_bHPR(int bHPR) { m_bHPR = bHPR; }
+
+	bool get_m_actFirst() { return m_actFirst; }
+	void set_m_actFirst(bool aF) { m_actFirst = aF; }
+
+	bool get_m_restoreHP() { return m_restoreHP; }
+	void set_m_restoreHP(bool rHP) { m_restoreHP = rHP; }
+
 };

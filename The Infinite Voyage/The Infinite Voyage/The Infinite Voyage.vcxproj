@@ -153,6 +153,7 @@
     <ClInclude Include="MasterCardLibrary.h" />
     <ClInclude Include="MonsterCardLibrary.h" />
     <ClInclude Include="MonsterAction.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerCardLibrary.h" />
     <ClInclude Include="RoomCardLibrary.h" />
   </ItemGroup>
