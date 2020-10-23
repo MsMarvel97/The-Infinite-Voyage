@@ -6,10 +6,10 @@
 class ActiveMonster
 {
 public:
-	string activeTitle, activeText;
-	int activeDam, activeHealth, activeDefense, activeArmor, activeHeal;
+	string activeTitle = "Something is wrong", activeText = "Something is wrong";
+	int activeDam = 0 , activeHealth = 0, activeDefense = 0, activeArmor = 0, activeHeal = 0;
 };
 
-void MonsterAction();
+void MonsterAction(PlayerCard playedCard, MonsterCard playedMonster, ActiveMonster jimbo);
 
-ActiveMonster InitMonster(MonsterCard card);
+ActiveMonster InitMonster(MonsterCard* card);
