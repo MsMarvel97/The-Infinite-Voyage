@@ -4,9 +4,13 @@
 #include "CardTemplate.h"
 
 //player basic
-PlayerCard* attack = new PlayerCard;
-PlayerCard* defend = new PlayerCard;
-PlayerCard* draw = new PlayerCard;
+
+
+class PlayerCardLibrary {
+public:
+	PlayerCard* attack;
+	PlayerCard* defend;
+	PlayerCard* draw;
 
 	PlayerCard* HeatSink;
 	PlayerCard* Overload;
@@ -17,6 +21,16 @@ PlayerCard* draw = new PlayerCard;
 	PlayerCard* HighExplosiveCharge;
 	PlayerCard* BatteryPack;
 
-	PlayerCardLibrary();
-};
+	PlayerCard PlayerCards[10];
+	static PlayerCardLibrary& GetInstance()
+	{
+		static PlayerCardLibrary Instance = PlayerCardLibrary();
+		return Instance;
+	}
 
+
+private:
+
+	PlayerCardLibrary();
+
+};

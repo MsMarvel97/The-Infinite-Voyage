@@ -1,7 +1,7 @@
 //This class handles player actions
 #include <iostream>
 #include <string>
-#include "PlayerCardLibrary.h"
+#include "Player.h"
 using namespace std;
 int deckSize = 9;
 string deck[9];	

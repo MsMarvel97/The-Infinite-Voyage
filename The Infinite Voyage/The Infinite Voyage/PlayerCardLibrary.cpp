@@ -98,7 +98,7 @@ PlayerCardLibrary::PlayerCardLibrary()
 
 	//Player Elite Upgrade Cards\\
 
-	Barrel->cost = 1;
+	/*Barrel->cost = 1;
 	Barrel->damage = 6;
 	Barrel->defense = -1;
 	Barrel->title = "Barrel";
@@ -123,7 +123,7 @@ PlayerCardLibrary::PlayerCardLibrary()
 	BatteryPack->draw = 3;
 	BatteryPack->title = "Battery Pack";
 	BatteryPack->text = "Draw 3 cards";
-	BatteryPack->type = "Upgrade";
+	BatteryPack->type = "Upgrade";*/
 
 
 	//Player Elite Upgrade Cards
