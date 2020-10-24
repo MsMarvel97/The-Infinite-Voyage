@@ -21,5 +21,13 @@ class Player
 
 
 	}
-
+	void ChooseCard(int x, int y)
+	{
+		x = 1;
+		y = 0;
+		PlayerCardLibrary::GetInstance().PlayerCards[x];
+		PlayerCardLibrary& pLibrary = PlayerCardLibrary::GetInstance();
+		MonsterCardLibrary& mLibrary = MonsterCardLibrary::GetInstance();
+		ActiveMonster::MonsterAction(&pLibrary.PlayerCards[x], &mLibrary.MonsterCards[y]);
+	}
 };
