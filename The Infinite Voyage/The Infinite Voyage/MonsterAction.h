@@ -7,8 +7,8 @@ class ActiveMonster
 {
 public:
 	std::string activeTitle, activeText;
-	int activeDam, activeHealth, activeDefense, activeArmor, activeHeal;
-	static void MonsterAction(PlayerCard* pCard, MonsterCard* mCard, ActiveMonster jimbo);
+	int activeDam = 0, activeStrength = 0, activeHealth = 0, activeDefense = 0, activeArmor = 0, activeHeal = 0, activeSelfDam = 0;
+	static void MonsterAction(PlayerCard* pCard, MonsterCard* mCard, ActiveMonster& jimbo);
 };
 
 
