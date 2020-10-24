@@ -145,11 +145,12 @@
     <ClCompile Include="PlayerCardLibrary.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="RoomCardLibrary.cpp" />
-    <ClCompile Include="The Infinite Voyage.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BossCardLibrary.h" />
     <ClInclude Include="CardTemplate.h" />
+    <ClInclude Include="Main.h" />
     <ClInclude Include="MasterCardLibrary.h" />
     <ClInclude Include="MonsterCardLibrary.h" />
     <ClInclude Include="MonsterAction.h" />

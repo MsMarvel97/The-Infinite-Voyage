@@ -32,7 +32,9 @@ PlayerCardLibrary::PlayerCardLibrary()
 	draw->set_text ("Draw 2 cards.");
 	draw->set_type ("Basic");
 
-
+	PlayerCards[0] = *PlayerCardLibrary::attack;
+	PlayerCards[1] = *PlayerCardLibrary::defend;
+	PlayerCards[2] = *PlayerCardLibrary::draw;
 
 	//Player Upgrade Cards
 	HeatSink = new PlayerCard();

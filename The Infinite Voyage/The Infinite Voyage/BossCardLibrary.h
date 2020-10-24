@@ -11,13 +11,13 @@ public:
 
 
 	// boss basic
-	BossCard* RendingClaws = new BossCard;
-	BossCard* TwistedLash = new BossCard;
-	BossCard* Evolve = new BossCard;
+	BossCard* rendingClaws = new BossCard;
+	BossCard* twistedLash = new BossCard;
+	BossCard* evolve = new BossCard;
 
 	//boss advanced 
-	BossCard* FueledRage = new BossCard;
-	BossCard* Mutate = new BossCard;
+	BossCard* fueledRage = new BossCard;
+	BossCard* mutate = new BossCard;
 
 	BossCard BossCards[2];
 	static Boss& GetInstance()

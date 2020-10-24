@@ -3,5 +3,11 @@
 #endif
 #include "BossCardLibrary.h"
 
-RoomCard* MedicalBay = new RoomCard;
-RoomCard* CrewQuarters = new RoomCard;
+class RoomCardLibrary {
+public:
+	RoomCard* medicalBay = new RoomCard;
+	RoomCard* crewQuarters = new RoomCard;
+
+private:
+	RoomCardLibrary();
+};
