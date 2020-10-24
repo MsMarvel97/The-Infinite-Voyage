@@ -75,7 +75,7 @@ public:
 class MonsterCard : public Card {
 public:
 	int m_health, m_selfDmg;
-	bool m_attackOne = false,m_attackTwo = false;
+	bool m_attackOne = false, m_attackTwo = false;
 	char m_aChoice[1];
 
 	int get_m_selfDmg() { return m_selfDmg; }

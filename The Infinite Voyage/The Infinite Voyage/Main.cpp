@@ -4,15 +4,21 @@ using namespace std;
 
 int main()
 {
-	//MonsterCardLibrary& mLibrary = MonsterCardLibrary::GetInstance();
-	//ActiveMonster monster;
-	//MonsterCard* monsterCard;
-	//monsterCard = mLibrary.Larva;
-	//monster = InitMonster(monsterCard);
+	PlayerCardLibrary& pLibrary = PlayerCardLibrary::GetInstance();
 
-	//cout << monster.activeHealth;
-
-	Player::Cards();
-
+	Player::Initialize(pLibrary.DrawPile);
+	
+	UI::SetUI();
+	
+	Player::PickACard(pLibrary.Hand);
 
 }
+
+
+//MonsterCardLibrary& mLibrary = MonsterCardLibrary::GetInstance();
+//ActiveMonster monster;
+//MonsterCard* monsterCard;
+//monsterCard = mLibrary.Larva;
+//monster = InitMonster(monsterCard);
+
+//cout << monster.activeHealth;

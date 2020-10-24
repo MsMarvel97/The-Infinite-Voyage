@@ -32,9 +32,33 @@ PlayerCardLibrary::PlayerCardLibrary()
 	draw->set_text ("Draw 2 cards.");
 	draw->set_type ("Basic");
 
-	PlayerCards[0] = *PlayerCardLibrary::attack;
-	PlayerCards[1] = *PlayerCardLibrary::defend;
-	PlayerCards[2] = *PlayerCardLibrary::draw;
+	//creating player basic deck
+	BasicDeck[0] = *PlayerCardLibrary::attack;
+	BasicDeck[1] = *PlayerCardLibrary::attack;
+	BasicDeck[2] = *PlayerCardLibrary::attack;
+	BasicDeck[3] = *PlayerCardLibrary::attack;
+	BasicDeck[4] = *PlayerCardLibrary::attack;
+	BasicDeck[5] = *PlayerCardLibrary::attack;
+	BasicDeck[6] = *PlayerCardLibrary::defend;
+	BasicDeck[7] = *PlayerCardLibrary::defend;
+	BasicDeck[8] = *PlayerCardLibrary::defend;
+	BasicDeck[9] = *PlayerCardLibrary::draw;
+
+
+
+	DrawPile.emplace_back(*PlayerCardLibrary::attack);
+	DrawPile.emplace_back(*PlayerCardLibrary::attack);
+	DrawPile.emplace_back(*PlayerCardLibrary::attack);
+	DrawPile.emplace_back(*PlayerCardLibrary::attack);
+	DrawPile.emplace_back(*PlayerCardLibrary::attack);
+	DrawPile.emplace_back(*PlayerCardLibrary::attack);
+	DrawPile.emplace_back(*PlayerCardLibrary::defend);
+	DrawPile.emplace_back(*PlayerCardLibrary::defend);
+	DrawPile.emplace_back(*PlayerCardLibrary::defend);
+	DrawPile.emplace_back(*PlayerCardLibrary::draw);
+
+
+
 
 	//Player Upgrade Cards
 	HeatSink = new PlayerCard();
@@ -97,6 +121,28 @@ PlayerCardLibrary::PlayerCardLibrary()
 	BatteryPack->set_text("Draw 3 cards.");
 	BatteryPack->set_type("Upgrade");
 
+
+	//creating vector of upgrade cards
+	UpgradeCards.emplace_back(*PlayerCardLibrary::HeatSink);
+	UpgradeCards.emplace_back(*PlayerCardLibrary::Overload);
+	UpgradeCards.emplace_back(*PlayerCardLibrary::PlasteelArmor);
+	UpgradeCards.emplace_back(*PlayerCardLibrary::ShieldPack);
+	UpgradeCards.emplace_back(*PlayerCardLibrary::Barrel);
+	UpgradeCards.emplace_back(*PlayerCardLibrary::Scope);
+	UpgradeCards.emplace_back(*PlayerCardLibrary::BatteryPack);
+
+
+	//creating array of instantiated player cards
+	PlayerCards[0] = *PlayerCardLibrary::attack;
+	PlayerCards[1] = *PlayerCardLibrary::defend;
+	PlayerCards[2] = *PlayerCardLibrary::draw;
+	PlayerCards[3] = *PlayerCardLibrary::HeatSink;
+	PlayerCards[4] = *PlayerCardLibrary::Overload;
+	PlayerCards[5] = *PlayerCardLibrary::PlasteelArmor;
+	PlayerCards[6] = *PlayerCardLibrary::ShieldPack;
+	PlayerCards[7] = *PlayerCardLibrary::Barrel;
+	PlayerCards[8] = *PlayerCardLibrary::Scope;
+	PlayerCards[9] = *PlayerCardLibrary::BatteryPack;
 
 	//Player Elite Upgrade Cards\\
 
