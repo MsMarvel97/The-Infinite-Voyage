@@ -4,4 +4,19 @@
 #include "CardTemplate.h"
 #include "MasterCardLibrary.h"
 
-RoomCard* MedicalBay = new RoomCard;
+class RoomCardLibrary {
+public:
+	RoomCard* medicalBay;
+	RoomCard* crewQuarters;
+
+	static RoomCardLibrary& GetInstance()
+	{
+		static RoomCardLibrary Instance = RoomCardLibrary();
+		return Instance;
+	}
+
+private:
+
+	RoomCardLibrary();
+
+};
