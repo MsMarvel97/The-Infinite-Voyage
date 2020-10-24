@@ -12,4 +12,4 @@ public:
 };
 
 
-ActiveMonster InitMonster(MonsterCard card);
+ActiveMonster InitMonster(MonsterCard* card);

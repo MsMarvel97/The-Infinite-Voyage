@@ -13,17 +13,17 @@ Pick move
 Apply move effects to Player
 */
 
-ActiveMonster InitMonster(MonsterCard card)
+ActiveMonster InitMonster(MonsterCard* card)
 {
 	ActiveMonster monster;
 
-	monster.activeTitle = card.get_title();
-	monster.activeText = card.get_text();
-	monster.activeDam = card.get_damage();
-	monster.activeHealth = card.get_m_health();
-	monster.activeDefense = card.get_defense();
-	monster.activeArmor = card.get_armor();
-	monster.activeHeal = card.get_heal();
+	monster.activeTitle = card->get_title();
+	monster.activeText = card->get_text();
+	monster.activeDam = card->get_damage();
+	monster.activeHealth = card->get_m_health();
+	monster.activeDefense = card->get_defense();
+	monster.activeArmor = card->get_armor();
+	monster.activeHeal = card->get_heal();
 	
 	return monster;
 }
