@@ -10,7 +10,7 @@ class ActiveMonster
 public:
 	std::string activeTitle, activeText;
 	int activeDam = 0, activeStrength = 0, activeHealth = 0, activeDefense = 0, activeArmor = 0, activeHeal = 0, activeSelfDam = 0;
-	
+	int activeDam2 = 0, activeHeal2 = 0, activeSelfDam2 = 0, reduceDmg, rollChance = 0;
 
 };
 
@@ -21,5 +21,5 @@ public:
 
 };
 
-EffectStack MonsterAction(PlayerCard* pCard, MonsterCard* mCard, ActiveMonster& jimbo);
+EffectStack MonsterAction(int pDamage, MonsterCard* mCard, ActiveMonster& jimbo);
 ActiveMonster InitMonster();

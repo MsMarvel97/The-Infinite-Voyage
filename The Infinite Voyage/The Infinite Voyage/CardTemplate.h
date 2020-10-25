@@ -75,7 +75,7 @@ public:
 class MonsterCard : public Card {
 public:
 	int m_health, m_selfDmg;
-	bool m_attackOne = false, m_attackTwo = false;
+	int m_damage2, m_heal2, m_rollChance, m_reduceDmg, m_selfDmg2;
 	char m_aChoice[1];
 
 	int get_m_selfDmg() { return m_selfDmg; }
@@ -83,12 +83,6 @@ public:
 
 	int get_m_health() { return m_health; }
 	void set_m_health(int health) { m_health = health; }
-
-	bool get_m_attackOne() { return m_attackOne; }
-	void set_m_attackOne(bool attackOne) { m_attackOne = attackOne; }
-
-	bool get_m_attackTwo() { return m_attackTwo; }
-	void set_m_attackTwo(bool attackTwo) { m_attackTwo = attackTwo; }
 
 };
 
