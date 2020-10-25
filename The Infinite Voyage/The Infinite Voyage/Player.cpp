@@ -1,9 +1,7 @@
 //This class handles player actions
 #include <iostream>
 #include <string>
-#include <vector>
-#include <algorithm>
-#include <random>
+
 #include "Player.h"
 using namespace std;
 int deckSize = 9;
@@ -29,15 +27,20 @@ void Player::PickACard(std::vector<PlayerCard>& deck) {
 		std::cin >> choice;
 	}
 	
-	PlayCard(deck[choice]);
+	int chosen = choice - 1;
+	PlayCard(deck[chosen], chosen);
 	
-	pLibrary.DiscardPile.emplace_back(deck[choice]);
-	
-	deck.erase(deck.begin() + (choice - 1));
+	pLibrary.DiscardPile.emplace_back(deck[chosen]);
+
+
+	deck.erase(deck.begin() + (chosen));
 }
 
-void Player::PlayCard(PlayerCard card) {
-	
+void Player::PlayCard(PlayerCard card, int index) {
+	PlayerCardLibrary& pLibrary = PlayerCardLibrary::GetInstance();
+	MonsterCardLibrary& mLibrary = MonsterCardLibrary::GetInstance();
+
+		
 }
 
 
@@ -96,9 +99,7 @@ PlayerCardLibrary& pLibrary = PlayerCardLibrary::GetInstance();
 }
 
 void Player::Shuffle(std::vector<PlayerCard> &deck) {
-
-	//auto seed = random_device{};
-	auto randomizer = std::default_random_engine{};
+	auto randomizer = std::default_random_engine(std::random_device{}());
 	std::shuffle(deck.begin(), deck.end(), randomizer);
 }
 

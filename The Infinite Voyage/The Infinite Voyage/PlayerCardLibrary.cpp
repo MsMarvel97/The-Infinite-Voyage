@@ -32,6 +32,7 @@ PlayerCardLibrary::PlayerCardLibrary()
 	draw->set_text ("Draw 2 cards.");
 	draw->set_type ("Basic");
 
+
 	//creating player basic deck
 	BasicDeck[0] = *PlayerCardLibrary::attack;
 	BasicDeck[1] = *PlayerCardLibrary::attack;
@@ -44,8 +45,6 @@ PlayerCardLibrary::PlayerCardLibrary()
 	BasicDeck[8] = *PlayerCardLibrary::defend;
 	BasicDeck[9] = *PlayerCardLibrary::draw;
 
-
-
 	DrawPile.emplace_back(*PlayerCardLibrary::attack);
 	DrawPile.emplace_back(*PlayerCardLibrary::attack);
 	DrawPile.emplace_back(*PlayerCardLibrary::attack);
@@ -56,8 +55,6 @@ PlayerCardLibrary::PlayerCardLibrary()
 	DrawPile.emplace_back(*PlayerCardLibrary::defend);
 	DrawPile.emplace_back(*PlayerCardLibrary::defend);
 	DrawPile.emplace_back(*PlayerCardLibrary::draw);
-
-
 
 
 	//Player Upgrade Cards
@@ -129,6 +126,7 @@ PlayerCardLibrary::PlayerCardLibrary()
 	UpgradeCards.emplace_back(*PlayerCardLibrary::ShieldPack);
 	UpgradeCards.emplace_back(*PlayerCardLibrary::Barrel);
 	UpgradeCards.emplace_back(*PlayerCardLibrary::Scope);
+	UpgradeCards.emplace_back(*PlayerCardLibrary::HighExplosiveCharge);
 	UpgradeCards.emplace_back(*PlayerCardLibrary::BatteryPack);
 
 

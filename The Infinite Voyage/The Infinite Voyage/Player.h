@@ -2,6 +2,9 @@
 #define __Player_H__
 #endif
 #include "MonsterAction.h"
+#include <vector>
+#include <algorithm>
+#include <random>
 
 class Player {
 public:
@@ -10,7 +13,7 @@ public:
 	static void PickACard(std::vector<PlayerCard>& deck);
 	static void Cards();
 	static void DrawCard(std::vector<PlayerCard>& deck);
-	static void PlayCard(PlayerCard);
+	static void PlayCard(PlayerCard, int index);
 	static void Initialize(std::vector<PlayerCard> &deck);
 
 	

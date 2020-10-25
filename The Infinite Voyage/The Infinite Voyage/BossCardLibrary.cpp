@@ -7,7 +7,6 @@ using namespace std;
 Boss::Boss()
 {
 	//boss basic
-
 	rendingClaws->set_damage(2 + (2 * m_CR));
 	rendingClaws->set_title("Rending Claws");
 	rendingClaws->set_text("Attack player for 2 + 2 x Challenge Rating");

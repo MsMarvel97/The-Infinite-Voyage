@@ -2,7 +2,10 @@
 #define __MonsterCardLibrary_H__
 #endif
 #include "PlayerCardLibrary.h"
-
+#include <vector>
+#include <algorithm>
+#include <random>
+#include <time.h>
 
 class MonsterCardLibrary {
 public:
@@ -12,12 +15,16 @@ public:
 	MonsterCard* Researcher = new MonsterCard;
 	MonsterCard* Trapper = new MonsterCard;
 	MonsterCard* Hound = new MonsterCard;
+
+	std::vector<MonsterCard>MonsterDeck;
+
 	static MonsterCardLibrary& GetInstance()
 	{
 		static MonsterCardLibrary Instance = MonsterCardLibrary();
 		return Instance;
 	}
-	MonsterCard MonsterCards[5];
+
+	static void MonsterShuffle(std::vector<MonsterCard>& deck);
 
 private:
 	MonsterCardLibrary();

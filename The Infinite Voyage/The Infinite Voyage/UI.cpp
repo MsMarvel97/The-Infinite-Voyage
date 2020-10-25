@@ -33,19 +33,9 @@ void UI::SetUI() {
 	{
 		cout << "Card " << i + 1 << ": " << pLibrary.Hand[i].get_title() << " - " << pLibrary.Hand[i].get_text() << endl;
 	}
-	//cout << "Card 1: " << "Attack " << "- Deal 2 damage" << endl;
-	//cout << "Card 2: " << "Attack " << "- Deal 2 damage" << endl;
-	//cout << "Card 3: " << "Attack " << "- Deal 2 damage" << endl;
-	//cout << "Card 4: " << "Attack " << "- Deal 2 damage" << endl;
-	//cout << "Card 5: " << "Attack " << "- Deal 2 damage" << endl;
-	//cout << "Card 6: " << "Attack " << "- Deal 2 damage" << endl;
-	//cout << "Card 7: " << "Attack " << "- Deal 2 damage" << endl;
-	//cout << "Card 8: " << "Attack " << "- Deal 2 damage" << endl;
-	//cout << "Card 9: " << "Attack " << "- Deal 2 damage" << endl;
-	//cout << "Card 10: " << "Attack " << "- Deal 2 damage" << endl;
+	cout << endl;
 }
 
 void UI::RefreshUI() {
 
 }
-//std::cout << pLibrary.PlayerCards[i].get_title() << "-" << array[i].get_title() << endl;

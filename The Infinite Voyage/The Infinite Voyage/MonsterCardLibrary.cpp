@@ -19,16 +19,17 @@ MonsterCardLibrary::MonsterCardLibrary()
 	Hound->set_m_selfDmg(1);
 	Hound->set_title("Hound");
 	Hound->set_text("Savage: Attack 4. Attack self 1.");
+			   
 
-	MonsterCards[0] = *MonsterCardLibrary::Larva;
-	MonsterCards[1] = *MonsterCardLibrary::Hound;
+	Sentry->set_m_health(8);
+	Sentry->set_damage(3);
+	Sentry->set_defense(1);
+	Sentry->set_title("Sentry");
+	Sentry->set_text("Intruder Alert: Attack 3. Take 1 less damage from next player attack");
 
-	
-	//Sentry->health = 8;
-	//Sentry->set_damage(3);
-	//Sentry->title = "Sentry";
-	//Sentry->set_text("Intruder Alert: Attack 3. Take 1 less damage from next player attack");
-
+	MonsterDeck[0] = *MonsterCardLibrary::Larva;
+	MonsterDeck[1] = *MonsterCardLibrary::Hound;
+	MonsterDeck[2] = *MonsterCardLibrary::Sentry;
 	
 	//Engineer->health = 8;
 	//Engineer->set_damage(3);
@@ -67,7 +68,7 @@ MonsterCardLibrary::MonsterCardLibrary()
 	////Researcher
 	//Researcher->health = 10;
 	//if (Researcher->attackOne == true)
-	//{
+	//{ 
 	//	Researcher->damage = 2;
 	//}
 	//if (Researcher->attackTwo == true)
@@ -79,6 +80,14 @@ MonsterCardLibrary::MonsterCardLibrary()
 
 	//
 
+
+}
+
+void MonsterCardLibrary::MonsterShuffle(std::vector<MonsterCard>& deck) {
+
+	auto randomizer = std::default_random_engine(std::random_device{}());
+
+	std::shuffle(deck.begin(), deck.end(), randomizer);
 
 }
 
