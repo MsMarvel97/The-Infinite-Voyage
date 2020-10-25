@@ -78,12 +78,26 @@ public:
 	int m_damage2, m_heal2, m_rollChance, m_reduceDmg, m_selfDmg2;
 	char m_aChoice[1];
 
-	int get_m_selfDmg() { return m_selfDmg; }
-	void set_m_selfDmg(int sDmg) { m_selfDmg = sDmg; }
-
 	int get_m_health() { return m_health; }
 	void set_m_health(int health) { m_health = health; }
 
+	int get_m_damage2() { return m_damage2; }
+	void set_m_damage2(int damage2) { m_damage2 = damage2; }
+
+	int get_m_selfDmg() { return m_selfDmg; }
+	void set_m_selfDmg(int sDmg) { m_selfDmg = sDmg; }
+
+	int get_m_selfDmg2() { return m_selfDmg2; }
+	void set_m_selfDmg2(int selfDmg2) { m_selfDmg2 = selfDmg2; }
+
+	int get_m_heal2() { return m_heal2; }
+	void set_m_heal2(int heal2) { m_heal2 = heal2; }
+
+	int get_m_rollChance() { return m_rollChance; }
+	void set_m_rollChance(int rollChance) { m_rollChance = rollChance; }
+
+	int get_m_reduceDmg() { return m_reduceDmg; }
+	void set_m_reduceDmg (int reduce) { m_reduceDmg = reduce; }
 };
 
 class BossCard : public Card {

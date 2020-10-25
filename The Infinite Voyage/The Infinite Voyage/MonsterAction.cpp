@@ -91,29 +91,47 @@ EffectStack MonsterAction(int pDamage, MonsterCard* mCard, ActiveMonster& jimbo)
 	//end check if dead
 
 	//actual action
-	if (choice <= jimbo.rollChance) //roll for first move
+	if (jimbo.rollChance != 0)//check for multiple moves
 	{
-		outgoing.effectDam = jimbo.activeDam;
-		if (outgoing.effectDam > 0)
+		if (choice <= jimbo.rollChance) //roll for first move
 		{
-			outgoing.effectDam + jimbo.activeStrength;
-		}
+			outgoing.effectDam = jimbo.activeDam;
+			if (outgoing.effectDam > 0)
+			{
+				outgoing.effectDam + jimbo.activeStrength;
+			}
 
-		jimbo.activeHealth -= jimbo.activeSelfDam;
-		jimbo.activeHealth += jimbo.activeHeal;
-		return outgoing;
-	}
-	else // roll for second move
-	{
-		outgoing.effectDam = jimbo.activeDam2;
-		if (outgoing.effectDam > 0)
-		{
-			outgoing.effectDam + jimbo.activeStrength;
+			jimbo.activeHealth -= jimbo.activeSelfDam;
+			jimbo.activeHealth += jimbo.activeHeal;
+			return outgoing;
 		}
-		
-		jimbo.activeHealth += jimbo.activeHeal2;
-		jimbo.activeHealth -= jimbo.activeSelfDam2;
-		return outgoing;
+		else // roll for second move
+		{
+			outgoing.effectDam = jimbo.activeDam2;
+			if (outgoing.effectDam > 0)
+			{
+				outgoing.effectDam + jimbo.activeStrength;
+			}
+
+			jimbo.activeHealth += jimbo.activeHeal2;
+			jimbo.activeHealth -= jimbo.activeSelfDam2;
+			return outgoing;
+		}
+	}
+	else//do move
+	{
+		if (choice <= jimbo.rollChance) //roll for first move
+		{
+			outgoing.effectDam = jimbo.activeDam;
+			if (outgoing.effectDam > 0)
+			{
+				outgoing.effectDam + jimbo.activeStrength;
+			}
+
+			jimbo.activeHealth -= jimbo.activeSelfDam;
+			jimbo.activeHealth += jimbo.activeHeal;
+			return outgoing;
+		}
 	}
 	//end actual action
 }

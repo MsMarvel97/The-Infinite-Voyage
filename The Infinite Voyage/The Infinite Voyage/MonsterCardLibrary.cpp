@@ -27,7 +27,8 @@ MonsterCardLibrary::MonsterCardLibrary()
 	MonsterDeck[1] = *MonsterCardLibrary::Hound;
 	MonsterDeck[2] = *MonsterCardLibrary::Sentry;
 
-	
+	MonsterDeck.emplace_back(Researcher);
+
 	//Sentry->health = 8;
 	//Sentry->set_damage(3);
 	//Sentry->title = "Sentry";
@@ -40,19 +41,15 @@ MonsterCardLibrary::MonsterCardLibrary()
 	//Engineer->set_text("Laser Cutter: Attack 3. Player draws one fewer card next turn");
 
 	//Researcher
-	//Researcher->set_m_health(10);
-	//if (Researcher->get_m_attackOne == true)
-	//{
-	//	Researcher->set_damage(2);
-	//}
-	//if (Researcher->attackTwo == true)
-	//{
-	//	Researcher->set_heal(2);
-	//}
-	//Researcher->title = "Researcher";
-	//Researcher->set_text("(Roll 1-3) Dissect: Attack 2. \nRoll(4-6) Self-Medicate: Heal 2.");
-
-
+	Researcher->set_m_health(10);
+	Researcher->set_title("Researcher");
+	Researcher->set_text("(Roll 1-3) Dissect: Attack 2. \nRoll(4-6) Self-Medicate: Heal 2.");
+	Researcher->set_damage(2);
+	Researcher->set_m_damage2(0);
+	Researcher->set_heal(0);
+	Researcher->set_m_heal2(2);
+	Researcher->set_m_rollChance(3);
+	
 	//Trapper
 	//Trapper->health = 8;
 	//if (Trapper->attackOne == true)
