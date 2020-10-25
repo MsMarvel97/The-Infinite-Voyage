@@ -3,13 +3,23 @@
 #endif
 #include "MonsterCardLibrary.h"
 
+
+
 class ActiveMonster
 {
 public:
 	std::string activeTitle, activeText;
 	int activeDam = 0, activeStrength = 0, activeHealth = 0, activeDefense = 0, activeArmor = 0, activeHeal = 0, activeSelfDam = 0;
-	static void MonsterAction(PlayerCard* pCard, MonsterCard* mCard, ActiveMonster& jimbo);
+	
+
 };
 
+class EffectStack
+{
+public:
+	int effectDam = 0, effectEnergy = 0;
 
-ActiveMonster InitMonster(MonsterCard* card);
+};
+
+EffectStack MonsterAction(PlayerCard* pCard, MonsterCard* mCard, ActiveMonster& jimbo);
+ActiveMonster InitMonster();

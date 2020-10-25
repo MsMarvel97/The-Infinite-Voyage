@@ -23,6 +23,10 @@ MonsterCardLibrary::MonsterCardLibrary()
 	MonsterCards[0] = *MonsterCardLibrary::Larva;
 	MonsterCards[1] = *MonsterCardLibrary::Hound;
 
+	MonsterDeck[0] = *MonsterCardLibrary::Larva;
+	MonsterDeck[1] = *MonsterCardLibrary::Hound;
+	MonsterDeck[2] = *MonsterCardLibrary::Sentry;
+
 	
 	//Sentry->health = 8;
 	//Sentry->set_damage(3);
@@ -80,5 +84,11 @@ MonsterCardLibrary::MonsterCardLibrary()
 	//
 
 
+}
+
+void MonsterCardLibrary::MonsterShuffle(std::vector<MonsterCard>& deck)
+{
+	auto randomizer = std::default_random_engine(std::random_device{}());
+	std::shuffle(deck.begin(), deck.end(), randomizer);
 }
 
