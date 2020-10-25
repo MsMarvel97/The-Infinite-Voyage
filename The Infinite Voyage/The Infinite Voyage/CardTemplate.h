@@ -2,7 +2,6 @@
 #ifndef __CardTemplate_H__
 #define __CardTemplate_H__
 #endif
-
 #include <iostream>
 #include <string>
 
@@ -60,37 +59,40 @@ public:
 
 	std::string get_type() { return m_type; }
 	void set_type(const std::string& type) { m_type = type; }
+};
 
-
-
-
-
-
-	/*public PlayerCard(int damage, int defense, int armor, int strength, heal, text, title, cost, draw, maxHP, energy, exhaust, type)
-	{
-
-	}*/
+struct MonsterAction {
+	int m_selfDmg, m_reduceDmg, m_damage, m_strength, m_heal;
 };
 
 class MonsterCard : public Card {
 public:
-	int m_health, m_selfDmg;
-	bool m_attackOne = false, m_attackTwo = false;
+	int m_health, m_A1selfDmg, m_A2selfDmg, m_A1reduceDmg, m_A2reduceDmg, m_rollChance, m_A2damage, m_A2defense, m_A2strength, m_A2heal;
+	MonsterAction choices[2];
 	char m_aChoice[1];
 
-	int get_m_selfDmg() { return m_selfDmg; }
-	void set_m_selfDmg(int sDmg) { m_selfDmg = sDmg; }
+	int get_m_A1selfDmg() { return m_A1selfDmg; }
+	void set_m_A1selfDmg(int sDmg) { m_A1selfDmg = sDmg; }
+
+	int get_m_A2selfDmg() { return m_A2selfDmg; }
+	void set_m_A2selfDmg(int sDmg) { m_A2selfDmg = sDmg; }
 
 	int get_m_health() { return m_health; }
 	void set_m_health(int health) { m_health = health; }
 
-	bool get_m_attackOne() { return m_attackOne; }
-	void set_m_attackOne(bool attackOne) { m_attackOne = attackOne; }
+	int get_m_rollChance() { return m_rollChance; }
+	void set_m_rollChance(int chance) { m_rollChance = chance; }
 
-	bool get_m_attackTwo() { return m_attackTwo; }
-	void set_m_attackTwo(bool attackTwo) { m_attackTwo = attackTwo; }
+	int get_m_A1reduceDmg() { return m_A1reduceDmg; }
+	void set_m_A1reduceDmg(int reduceDmg) { m_A1reduceDmg = reduceDmg; }
 
+	int get_m_A2reduceDmg() { return m_A2reduceDmg; }
+	void set_m_A2reduceDmg(int reduceDmg) { m_A2reduceDmg = reduceDmg; }
+
+	void set_choices(MonsterAction choice, MonsterAction choice2) { choices[0] = choice; choices[1] = choice2; }
 };
+
+
 
 class BossCard : public Card {
 public:

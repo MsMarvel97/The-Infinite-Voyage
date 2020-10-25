@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include "MonsterCardLibrary.h"
-
 using namespace std;
 
 MonsterCardLibrary::MonsterCardLibrary()
@@ -12,11 +11,13 @@ MonsterCardLibrary::MonsterCardLibrary()
 	Larva->set_strength(1);
 	Larva->set_title ("Larva");
 	Larva->set_text("Bite: Attack 2. Gain 1 Strength. Stacks up to 2 times");
+	Larva->set_choices(MonsterAction{ 0, 0, 2, 1, 0 }, MonsterAction{ 0, 0, 2, 1, 0 });
+	
 
 	//Hound
 	Hound->set_m_health(8);
 	Hound->set_damage(4);
-	Hound->set_m_selfDmg(1);
+	Hound->set_m_A1selfDmg(1);
 	Hound->set_title("Hound");
 	Hound->set_text("Savage: Attack 4. Attack self 1.");
 			   
@@ -27,9 +28,9 @@ MonsterCardLibrary::MonsterCardLibrary()
 	Sentry->set_title("Sentry");
 	Sentry->set_text("Intruder Alert: Attack 3. Take 1 less damage from next player attack");
 
-	MonsterDeck[0] = *MonsterCardLibrary::Larva;
-	MonsterDeck[1] = *MonsterCardLibrary::Hound;
-	MonsterDeck[2] = *MonsterCardLibrary::Sentry;
+	MonsterDeck.emplace_back(*MonsterCardLibrary::Larva);
+	MonsterDeck.emplace_back(*MonsterCardLibrary::Hound);
+	MonsterDeck.emplace_back(*MonsterCardLibrary::Sentry);
 	
 	//Engineer->health = 8;
 	//Engineer->set_damage(3);
