@@ -67,7 +67,7 @@ struct MonsterAction {
 
 class MonsterCard : public Card {
 public:
-	int m_health, m_A1selfDmg, m_A2selfDmg, m_A1reduceDmg, m_A2reduceDmg, m_rollChance, m_A2damage, m_A2defense, m_A2strength, m_A2heal;
+	int m_health, m_A1selfDmg, m_A2selfDmg, m_A1reduceDmg, m_A2reduceDmg, m_rollChance, m_A2damage, m_A2defense, m_A2strength, m_A2heal, m_aDR;
 	MonsterAction choices[2];
 	char m_aChoice[1];
 
@@ -88,6 +88,15 @@ public:
 
 	int get_m_A2reduceDmg() { return m_A2reduceDmg; }
 	void set_m_A2reduceDmg(int reduceDmg) { m_A2reduceDmg = reduceDmg; }
+
+	int get_m_A2damage() { return m_A2damage; }
+	void set_m_A2damage(int damage) { m_A2damage = damage; }
+
+	int get_m_A2heal() {return m_A2heal;}
+	void set_m_A2heal(int healing) { m_A2heal = healing; }
+
+	int get_m_aDR() { return m_aDR; }
+	void set_m_aDR(int damageReduction) { m_aDR = damageReduction; }
 
 	void set_choices(MonsterAction choice, MonsterAction choice2) { choices[0] = choice; choices[1] = choice2; }
 };

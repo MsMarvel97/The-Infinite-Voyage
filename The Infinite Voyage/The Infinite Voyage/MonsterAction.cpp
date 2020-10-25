@@ -26,133 +26,89 @@ Pick move
 Apply move effects to Player
 */
 
-//ActiveMonster::ActiveMonster()
-//{
-//	MonsterCardLibrary& mLibrary = MonsterCardLibrary::GetInstance();
-//
-//	mLibrary.MonsterShuffle(mLibrary.MonsterDeck);
-//
-//	MonsterCard card = mLibrary.MonsterDeck[0];
-//
-//	ActiveMonster monster;
-//
-//	monster.activeTitle = card.get_title();
-//	monster.activeText = card.get_text();
-//	monster.activeHealth = card.get_m_health();
-//
-//	if (card.get_strength() > 0)
-//	{
-//		monster.activeStrength = card.get_strength();
-//	}
-//	if (card.m_heal > 0)
-//	{
-//		monster.activeHeal = card.m_heal;
-//	}
-//	if (card.m_heal2 > 0)
-//	{
-//		monster.activeHeal2 = card.m_heal2;
-//	}
-//	if (card.m_damage > 0)
-//	{
-//		monster.activeDam = card.m_damage;
-//	}
-//	if (card.m_damage2 > 0)
-//	{
-//		monster.activeDam2 = card.m_damage2;
-//	}
-//	if (card.m_selfDmg > 0)
-//	{
-//		monster.activeSelfDam = card.m_selfDmg;
-//	}
-//	if (card.m_selfDmg2 > 0)
-//	{
-//		monster.activeSelfDam2 = card.m_selfDmg2;
-//	}
-//
-//	return monster;
-//}
 
-////
-////EffectStack MonsterAction(int pDamage, MonsterCard* mCard, ActiveMonster& jimbo)
-////{
-////	EffectStack outgoing;
-////	int receivedDamage = pDamage;
-////
-////	srand(time(0));
-////	int choice = rand() % 6 + 1;
-////
-////	//apply player damage
-////	if (jimbo.reduceDmg > 0)
-////	{
-////		jimbo.activeHealth -= receivedDamage - 1;
-////		jimbo.reduceDmg--;
-////	}
-////	else
-////	{
-////		jimbo.activeHealth -= receivedDamage;
-////	}
-////	//end apply player damage
-////
-////	//check if dead
-////	if (jimbo.activeHealth <= 0)
-////	{
-////		return outgoing;
-////	}
-////	//end check if dead
-////
-////	if roll is value of first ability
-////
-////		load in ActiveMonster.choice[0]
-////
-////		damage
-////		damage
-////		vars
-////
-////	//actual action
-////	if (jimbo.rollChance != 0)//check for multiple moves
-////	{
-////		if (choice <= jimbo.rollChance) //roll for first move
-////		{
-////			outgoing.effectDam = jimbo.activeDam;
-////			if (outgoing.effectDam > 0)
-////			{
-////				outgoing.effectDam + jimbo.activeStrength;
-////			}
-////
-////			jimbo.activeHealth -= jimbo.activeSelfDam;
-////			jimbo.activeHealth += jimbo.activeHeal;
-////			return outgoing;
-////		}
-////		else // roll for second move
-////		{
-////			outgoing.effectDam = jimbo.activeDam2;
-////			if (outgoing.effectDam > 0)
-////			{
-////				outgoing.effectDam + jimbo.activeStrength;
-////			}
-////
-////			jimbo.activeHealth += jimbo.activeHeal2;
-////			jimbo.activeHealth -= jimbo.activeSelfDam2;
-////			return outgoing;
-////		}
-////	}
-////	else//do move
-////	{
-////		if (choice <= jimbo.rollChance) //roll for first move
-////		{
-////			outgoing.effectDam = jimbo.activeDam;
-////			if (outgoing.effectDam > 0)
-////			{
-////				outgoing.effectDam + jimbo.activeStrength;
-////			}
-////
-////			jimbo.activeHealth -= jimbo.activeSelfDam;
-////			jimbo.activeHealth += jimbo.activeHeal;
-////			return outgoing;
-////		}
-////	}
-////	//end actual action
-////}
+void EffectStack::MonsterAction(int pdamage, ActiveMonster& jimbo)
+{
+	MonsterCard active = jimbo.get_card();
+	EffectStack:: outgoing;
+	int receiveddamage = pdamage;
+
+	srand(time(0));
+	int choice = rand() % 6 + 1;
+
+	//apply player damage
+	if (active.get_m_aDR() > 0)
+	{
+		active.set_m_health(active.get_m_health() - (receiveddamage - 1)) ;
+		active.set_m_aDR(active.get_m_health() - 1);
+	}
+	else
+	{
+		active.set_m_health(active.get_m_health() - receiveddamage) ;
+	}
+	//end apply player damage
+
+	//check if dead
+	if (jimbo.get_card().get_m_health()<= 0)
+	{
+		return outgoing;
+	}
+	//end check if dead
+
+	//*if roll is value of first ability
+
+	//	load in activemonster.choice[0]
+
+	//	damage
+	//	damage
+	//	vars*
+
+	//actual action
+	if (jimbo.get_card().get_m_rollChance() != 0)//check for multiple moves
+	{
+		if (choice <= jimbo.get_card().get_m_rollChance()) //roll for first move
+		{
+			outgoing.effectdam = active.get_damage();
+			if (outgoing.effectdam > 0)
+			{
+				outgoing.effectdam + active.get_strength();
+			}
+
+			active.set_m_health(active.get_m_health() - active.get_m_A1selfDmg());
+			active.set_m_health(active.get_m_health() + active.get_heal());
+			return outgoing;
+		}
+
+		else // roll for second move
+		{
+			outgoing.effectdam = active.get_m_A2damage();
+			if (outgoing.effectdam > 0)
+			{
+				outgoing.effectdam + active.get_strength();
+			}
+
+			active.set_m_health(active.get_m_health() - active.get_m_A2selfDmg());
+			active.set_m_health(active.get_m_health() + active.get_m_A2heal());
+			return outgoing;
+		}
+	}
+	else//do move
+	{
+		if (choice <= jimbo.get_card().get_m_rollChance()) //roll for first move
+		{
+			outgoing.effectdam = active.get_damage();
+			if (outgoing.effectdam > 0)
+			{
+				outgoing.effectdam + jimbo.activestrength;
+			}
+
+			jimbo.activehealth -= jimbo.activeselfdam;
+			jimbo.activehealth += jimbo.activeheal;
+			return outgoing;
+		}
+	}
+	//end actual action
+}
 //ActiveMonster InitMonster(MonsterCard* card)
 //{
 //	ActiveMonster monster;
