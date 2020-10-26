@@ -22,7 +22,9 @@ private:
 
 class EffectStack {
 public:
-
+	static void LastAttackText(bool lastAttack, ActiveMonster& jimbo);
+	static int MonsterAction (ActiveMonster& jimbo);
+	static bool ReceiveDamage(int pDamage, ActiveMonster& jimbo);
 private:
-	static void MonsterAction(int pDamage, ActiveMonster& jimbo);
+
 };

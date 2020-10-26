@@ -6,15 +6,37 @@ int main()
 {
 	PlayerCardLibrary& pLibrary = PlayerCardLibrary::GetInstance();
 	MonsterCardLibrary& mLibrary = MonsterCardLibrary::GetInstance();
-	ActiveMonster monster(mLibrary.Larva);
+	MonsterCardLibrary::MonsterShuffle(mLibrary.MonsterDeck);
+	Player& user = Player::GetInstance();
 
+	ActiveMonster monster(mLibrary.MonsterDeck[0]);
 	Player::Initialize(pLibrary.DrawPile);
 
-	monster.get_card().set_damage(5);
-	
-	UI::SetUI();
-	
-	Player::PickACard(pLibrary.Hand);
+	//round
+	while (user.get_endRound () == false) {
+		UI::SetUI(monster, true);
+		Player::PickACard(pLibrary.Hand, monster);
+	}
+
+	mLibrary.MonsterDeck.erase(mLibrary.MonsterDeck.begin() + 0);
+	user.endRound = false;
+
+	Player::GetRewardCards();
+	UI::UpgradeScreen();
+	Player::PickRewardCard();
+
+	Player::NewRound(pLibrary.DrawPile);
+	ActiveMonster monster2(mLibrary.MonsterDeck[0]);
+
+	while (user.get_endRound() == false) {
+		UI::SetUI(monster2, true);
+		Player::PickACard(pLibrary.Hand, monster2);
+	}
+	system("CLS");
+	cout << "Congratulations! The boss awaits." << endl;
+	cout << "You have completed the demo for 'The Infinite Voyage'." << endl;
+	cout << "Thanks for playing!" << endl;
+
 }
 
 

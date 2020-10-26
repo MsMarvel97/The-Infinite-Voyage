@@ -3,12 +3,16 @@
 #endif
 #include "RoomCardLibrary.h"
 
+//class for UI
 class UI {
 public:
-	static void SetUI();
-	static void RefreshUI();
+	//function to set UI
+	static void SetUI(ActiveMonster& monster, bool round1);
+	//function to refresh UI
+	static void UpgradeScreen();
 
 private:
+	//constructor for UI class
 	UI();
 };
 
