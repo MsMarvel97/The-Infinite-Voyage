@@ -74,7 +74,7 @@ void Player::PlayCard(PlayerCard card, int index, ActiveMonster& monster) {
 	MonsterCardLibrary& mLibrary = MonsterCardLibrary::GetInstance();
 	Player& user = Player::GetInstance();
 
-	user.set_energy(user.get_energy() - card.get_cost());
+	user.set_energy(user.get_energy() + (card.get_energy() - card.get_cost()));
 	user.set_health(user.get_health() + card.get_heal());
 	user.set_defense(user.get_defense() + card.get_defense());
 	user.set_armor(user.get_armor() + card.get_armor());
@@ -219,8 +219,8 @@ PlayerCardLibrary& pLibrary = PlayerCardLibrary::GetInstance();
 				pLibrary.DiscardPile.erase(pLibrary.DiscardPile.begin() + 0);
 
 			}
-			Shuffle(deck);
-			DrawCard(deck);
+			Shuffle(pLibrary.DrawPile);
+			DrawCard(pLibrary.DrawPile);
 			/*pLibrary.DiscardPile.erase(pLibrary.DiscardPile.begin(), pLibrary.DiscardPile.begin() + x);*/
 		}
 		else if (pLibrary.DrawPile.size() > 0) {
@@ -254,9 +254,14 @@ void Player::PickRewardCard() {
 
 		for (int i = 0; i <= handSize; i++)
 		{
-			pLibrary.DrawPile.emplace_back(pLibrary.Hand[0]);
 			pLibrary.Hand.erase(pLibrary.Hand.begin() + 0);
 		}
+
+		//for (int i = 0; i <= handSize; i++)
+		//{
+		//	pLibrary.DrawPile.emplace_back(pLibrary.Hand[0]);
+		//	pLibrary.Hand.erase(pLibrary.Hand.begin() + 0);
+		//}
 
 }
 
@@ -264,7 +269,7 @@ void Player::GetRewardCards() {
 	PlayerCardLibrary& pLibrary = PlayerCardLibrary::GetInstance();
 	Player::Shuffle(pLibrary.UpgradeCards);
 	for (int i = 0; i <= 2; i++) {
-		DrawCard(pLibrary.UpgradeCards);
+		pLibrary.Hand.emplace_back(pLibrary.UpgradeCards[i]);
 	}
 }
 

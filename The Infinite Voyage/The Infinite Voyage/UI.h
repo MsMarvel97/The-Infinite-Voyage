@@ -8,6 +8,9 @@ class UI {
 public:
 	//function to set UI
 	static void SetUI(ActiveMonster& monster, bool round1);
+
+	static void SetBossUI(Boss& alien);
+
 	//function to refresh UI
 	static void UpgradeScreen();
 

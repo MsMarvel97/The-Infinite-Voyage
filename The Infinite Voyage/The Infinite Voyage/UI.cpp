@@ -41,6 +41,39 @@ void UI::SetUI(ActiveMonster& monster, bool round1) {
 	cout << "Player Hand" << endl;
 	for (int i = 0; i <= pLibrary.Hand.size() - 1; i++)
 	{
+		cout << "Card " << i + 1 << ": " <<  "(" << pLibrary.Hand[i].get_cost() << ") " << pLibrary.Hand[i].get_title() << " - " << pLibrary.Hand[i].get_text() << endl;
+	}
+	cout << endl;
+}
+
+void UI::SetBossUI(Boss& alien) {
+	system("CLS");
+
+	PlayerCardLibrary& pLibrary = PlayerCardLibrary::GetInstance();
+	Player& user = Player::GetInstance();
+	Boss& active = Boss::GetInstance();
+
+	//39 spaces for formatting
+	cout << "Room Title: " << "Medical Bay" << endl;
+	cout << "Room Effect: " << "Restore to full HP on completion" << endl;
+	cout << "Boss Effect: " << "Boss restores 1 HP per round" << endl;
+	cout << endl;
+
+	cout << "Boss: " << "Alien Commander" << endl;
+	cout << "Health: " << active.get_m_hp() << " || " << "Defense: " << active.get_m_def() << " || " << active.get_m_CR() << endl;
+	cout << "Last Attack Used: " << active.get_lastBCard() << endl;
+	cout << endl;
+
+	cout << "Player Stats" << endl;
+	cout << "Health: " << user.get_health() << " || " << "Energy: " << user.get_energy() << " || " << "Strength: " << user.get_strength() << " || " << "Armor: " << user.get_armor() << " || " << "Defense: " << user.get_defense() << endl;
+	cout << "Cards in Hand: " << pLibrary.Hand.size() << " || " << "Cards in Deck: " << pLibrary.DrawPile.size() << endl;
+	cout << "Cards in Discard: " << pLibrary.DiscardPile.size() << " || " << "Cards in Exhaust: " << pLibrary.ExhaustPile.size() << endl;
+	cout << endl;
+
+
+	cout << "Player Hand" << endl;
+	for (int i = 0; i <= pLibrary.Hand.size() - 1; i++)
+	{
 		cout << "Card " << i + 1 << ": " << pLibrary.Hand[i].get_title() << " - " << pLibrary.Hand[i].get_text() << endl;
 	}
 	cout << endl;
