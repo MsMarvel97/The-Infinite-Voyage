@@ -1,7 +1,11 @@
-#include <iostream>
-using namespace std;
+//including Main.h
 #include "Main.h"
+//including iostream
+#include <iostream>
+//using std namespace
+using namespace std;
 
+//main function
 int main()
 {
 	//getting an instance of the PlayerCardLibrary

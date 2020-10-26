@@ -111,8 +111,9 @@ void Player::PlayCard(PlayerCard card, int index, ActiveMonster& monster) {
 		}
 	}
 
+
 	//checking if the card had exhaust and placing it in the exhaust pile if true
-	if (card.get_exhaust() == true) 
+	if (card.get_exhaust() == true)
 	{
 		pLibrary.ExhaustPile.emplace_back(card);
 		pLibrary.Hand.erase(pLibrary.Hand.begin() + index);
@@ -124,8 +125,9 @@ void Player::PlayCard(PlayerCard card, int index, ActiveMonster& monster) {
 		EndRound(pLibrary.DrawPile, monster);
 	}
 
-	//discarding player hand
-	else 
+
+	//discarding player card
+	else if (card.get_exhaust() == false)
 	{
 		//adding cards in hand to discard
 		pLibrary.DiscardPile.emplace_back(card);
