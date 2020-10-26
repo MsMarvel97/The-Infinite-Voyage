@@ -1,7 +1,8 @@
-#pragma once
+//defining card template
 #ifndef __CardTemplate_H__
 #define __CardTemplate_H__
 #endif
+//including iostream and string
 #include <iostream>
 #include <string>
 
@@ -43,11 +44,14 @@ public:
 
 };
 
-
+//player card template
 class PlayerCard : public Card {
 public:
+	//integers to hold integer values that can only exist on player cards: card cost, additional card draw, max health increase, and additional energy
 	int m_cost = 0, m_draw = 0, m_maxHP = 0, m_energy = 0;
+	//bool to check if card has exhaust
 	bool m_exhaust = false;
+	//string to hold card type
 	std::string m_type;
 
 	//getter and setter for cost
@@ -75,11 +79,19 @@ public:
 	void set_type(const std::string& type) { m_type = type; }
 };
 
+//monster card template
 class MonsterCard : public Card {
 public:
-	int m_health = 0, m_A1selfDmg = 0, m_A2selfDmg = 0, m_A1reduceDmg = 0, m_A2reduceDmg = 0, m_rollChance = 0, m_A2damage = 0, m_A2defense = 0, m_A1strength = 0, m_A2strength = 0, m_A2heal = 0, m_aDR = 0;
+	//integers to hold values unique to monster cards: health, self damage of first action, self damage of second action, damage reduction of first
+	//action, damage reduction of second action, roll chance to govern probability of each ability being selected, damage of second action,
+	//strength value of first action, strength value of second action, heal value of second action, active damage reduction on monster
+	int m_health = 0, m_A1selfDmg = 0, m_A2selfDmg = 0, m_A1reduceDmg = 0, m_A2reduceDmg = 0, m_rollChance = 0, m_A2damage = 0, m_A1strength = 0, m_A2strength = 0, m_A2heal = 0, m_aDR = 0;
+	
+	//string to hold text for first action
 	std::string m_a1Text ;
+	//string to hold text for second action
 	std::string m_a2Text;
+	//string to hold text value of last action used. This is initialized to "None" for the first round.
 	std::string m_lastAttack = ("None.");
 
 	//getter and setter for ability 1 text
@@ -140,17 +152,19 @@ public:
 };
 
 
-
+//boss card template. No additional functions at this point, but keeps boss cards separate from standard card template
 class BossCard : public Card {
 public:
-	int CR;
 };
 
+//room card template. There was not enough time to implement rooms, but the structure for their inclusion is here.
 class RoomCard : public Card {
 public:
+	//integers to hold values unique to room cards: player health scaling, boss health scaling, damage to player each round, strength buff for player,
+	//strength buff for mosnter, boss heal per round
 	int m_pHealthScale, m_bHealthScale, m_dmgPerR, m_pStrBuff, m_monsterStrBuff, m_bHPR;
 	int m_drawPerR; //# of extra cards the player draws per round
-	bool m_actFirst;
+	bool m_actFirst; //bool to check if monsters will act first in this room
 	bool m_restoreHP; //restores player to full hp if true
 
 	//getter and setter for player health scaling

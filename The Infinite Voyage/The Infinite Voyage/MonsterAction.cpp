@@ -1,30 +1,14 @@
-/*
-Things that need to happen:
-Get the monster card
-Set stats from card
-Get moves from card
-Get Player card
-Apply Player effects
-Pick move
-Apply move effects to Player
-*/
-#include <iostream>
+//including MonsterAction.h
 #include "MonsterAction.h"
+
+//including iostream, vector, random, and algorithm for use by later functions
+#include <iostream>
 #include <vector>
 #include <random>
 #include <algorithm>
-using namespace::std;
 
-/*
-Things that need to happen:
-Get the monster card
-Set stats from card
-Get moves from card
-Get Player card
-Apply Player effects
-Pick move
-Apply move effects to Player
-*/
+//using std namespace
+using namespace::std;
 
 
 //function to receive damage for monster and check if it has died
@@ -127,15 +111,20 @@ int EffectStack::MonsterAction(ActiveMonster& jimbo)
 			
 			if (choice <= jimbo.get_card().get_m_rollChance()) //roll for first move
 			{
+				//setting outgoing value to damage value of active monster
 				outgoing = active.get_damage();
+				//adding strength value if outgoing is greater than 0
 				if (outgoing > 0)
 				{
 					outgoing += active.get_strength();
 				}
-
+				
+				//reducing monster health by self damage value of action 1
 				active.set_m_health(active.get_m_health() - active.get_m_A1selfDmg());
+				//increasing monster health by heal value of action 1
 				active.set_m_health(active.get_m_health() + active.get_heal());
 			}
+			//calling LastAttackText to set text for UI
 			EffectStack::LastAttackText(true, jimbo);
 		}
 		//returns the damage that will be done to the player

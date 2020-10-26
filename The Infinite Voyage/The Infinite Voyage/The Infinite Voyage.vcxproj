@@ -152,7 +152,6 @@
     <ClInclude Include="BossCardLibrary.h" />
     <ClInclude Include="CardTemplate.h" />
     <ClInclude Include="Main.h" />
-    <ClInclude Include="MasterCardLibrary.h" />
     <ClInclude Include="MonsterCardLibrary.h" />
     <ClInclude Include="MonsterAction.h" />
     <ClInclude Include="Player.h" />

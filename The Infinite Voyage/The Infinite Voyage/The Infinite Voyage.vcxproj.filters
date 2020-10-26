@@ -47,9 +47,6 @@
     <ClInclude Include="PlayerCardLibrary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MasterCardLibrary.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MonsterCardLibrary.h">
       <Filter>Header Files</Filter>
     </ClInclude>
